@@ -1,0 +1,27 @@
+name: gerryr-ytdlp # 'snapcraft register gerryr-ytdlp'
+base: core24
+version: '0.1'
+summary: yt-dlp is a feature-rich command-line audio/video downloader
+description: |
+  yt-dlp is a feature-rich command-line audio/video downloader with support for thousands of sites.
+  The project is a fork of youtube-dl based on the now inactive youtube-dlc. https://github.com/yt-dlp/yt-dlp
+
+  This snap is not endorsed by the yt-dlp project.
+
+platforms:
+  amd64:
+
+# grade: stable # must be 'stable' to release into candidate/stable channels
+# confinement: strict # use 'strict' once you have the right plugs and slots
+
+parts:
+  pyfiglet:
+    plugin: python
+    source-type: git
+    source: https://github.com/yt-dlp/yt-dlp
+
+apps:
+  gerryr-ytdlp:
+    command: bin/yt-dlp
+    plugs:
+      - home
