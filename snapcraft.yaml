@@ -1,5 +1,8 @@
 name: gerryr-ytdlp # 'snapcraft register gerryr-ytdlp'
+title: gerryR ytdlp
 base: core24
+contact: https://www.gerryr.com
+website: https://www.gerryr.com
 version: '0.1'
 summary: yt-dlp is a feature-rich command-line audio/video downloader
 description: |
@@ -11,14 +14,16 @@ description: |
 platforms:
   amd64:
 
-# grade: stable # must be 'stable' to release into candidate/stable channels
+grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
-  pyfiglet:
+  gerryr-ytdlp:
     plugin: python
     source-type: git
     source: https://github.com/yt-dlp/yt-dlp
+    stage-snaps:
+      - ffmpeg-2404
 
 apps:
   gerryr-ytdlp:
