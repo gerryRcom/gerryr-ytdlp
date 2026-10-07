@@ -30,3 +30,5 @@ apps:
     command: bin/yt-dlp
     plugs:
       - home
+    environment: # add path so dependencies can be called within the app
+      PATH: $SNAP/usr/bin:$PATH
